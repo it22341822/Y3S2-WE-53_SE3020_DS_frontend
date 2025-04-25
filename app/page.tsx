@@ -1,35 +1,22 @@
-'use client'
-import "./globals.css";
-
-import CheckoutPage from "@/components/CheckoutPage"
-import convertToSubcurrency from "@/lib/convertToSubcurrency"
-import {Elements} from "@stripe/react-stripe-js";
-import {loadStripe} from "@stripe/stripe-js";
-import { error } from "console";
-
-if(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY=== undefined){
-  throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY id not defined")
-}
-
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
+// app/page.tsx
+import Link from 'next/link';
 
 export default function Home() {
-  const amount = 49.48;
-  return <main>
-      <div>
-        <h1> Sonny</h1>
-        <h2>has requested: 
-        <span> ${amount}</span>
-        </h2>
+  return (
+    <div className="container">
+      <div className="hero">
+        <h1>Welcome to BYTEats</h1>
+        <p>Your favorite food delivery service</p>
+        
+        <div className="cta-box">
+          <h2>Ready to order?</h2>
+          <p>Proceed to checkout to place your order and make payment.</p>
+          
+          <Link href="/checkout" className="btn">
+            Go to Checkout
+          </Link>
+        </div>
       </div>
-      <Elements stripe={stripePromise}
-         options={{
-          mode:"payment",
-          amount:convertToSubcurrency(amount),
-          currency:"usd"
-         }} >
-        <CheckoutPage amount={amount}/>
-
-      </Elements>
-    </main>
+    </div>
+  );
 }

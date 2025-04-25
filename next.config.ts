@@ -1,10 +1,14 @@
-module.exports = {
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/api/:path*',
-        destination: 'http://localhost:5000/api/:path*', // Proxy to Express
+        source: '/api/payment/:path*',
+        destination: 'http://localhost:5003/api/payment/:path*',
       },
-    ]
+    ];
   },
-}
+};
+
+module.exports = nextConfig;
