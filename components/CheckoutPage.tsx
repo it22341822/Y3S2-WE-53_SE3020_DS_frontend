@@ -70,10 +70,10 @@ const CardEntryForm = ({ orderDetails, onPaymentSubmit }: {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4">
-      <div className="mb-4">
-        <label className="block text-gray-700 mb-2">Card Details</label>
-        <div className="p-3 border rounded-md">
+    <form onSubmit={handleSubmit} >
+      <div>
+        <label >Card Details</label>
+        <div>
           <CardElement options={{
             style: {
               base: {
@@ -93,20 +93,18 @@ const CardEntryForm = ({ orderDetails, onPaymentSubmit }: {
         </div>
       </div>
       
-      {error && <div className="text-red-500 mt-4">{error}</div>}
+      {error && <div >{error}</div>}
       
-      <div className="checkout-form button">
-        <button 
+      <div className="button-group">
+        <button className="btn btn-primary"
           type="submit" 
           disabled={!stripe || isLoading}
-          className="flex-grow paybtn"
         >
           {isLoading ? 'Processing...' : 'Submit Card'}
         </button>
-        <button
+        <button className="btn btn-secondary"
           type="button"
           onClick={() => window.location.href = '/'}
-          className="flex-grow cancelbtn"
         >
           Cancel
         </button>
@@ -171,23 +169,21 @@ const PaymentConfirmation = ({
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 text-center">
-      <h3 className="text-lg font-medium mb-4">Confirm Your Payment</h3>
-      <p className="mb-6">Your card information has been securely stored. Click below to complete your payment.</p>
+    <div className="confirmation-box">
+      <h3 >Confirm Your Payment</h3>
+      <p >Your card information has been securely stored. Click below to complete your payment.</p>
       
-      {error && <div className="text-red-500 mb-4">{error}</div>}
+      {error && <div className="error-message">{error}</div>}
       
-      <div className="checkout-form button">
-        <button 
+      <div className="button-group">
+        <button className="btn btn-primary"
           onClick={handleConfirmPayment}
           disabled={isLoading}
-          className="flex-grow paybtn"
         >
           {isLoading ? 'Processing...' : 'Confirm Payment'}
         </button>
-        <button
+        <button className="btn btn-secondary"
           onClick={() => window.location.href = '/'}
-          className="flex-grow cancelbtn"
         >
           Cancel
         </button>
@@ -259,13 +255,11 @@ const CheckoutPage = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
-        <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
-          <div className="text-red-500 text-center mb-4">Error: {error}</div>
-          <button 
-            onClick={() => setError(null)}
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors"
-          >
+      <div className="error-state" >
+        <div >
+          <div className="error-message">Error: {error}</div>
+          <button className="btn btn-primary"
+            onClick={() => setError(null)}>
             Try Again
           </button>
         </div>
@@ -275,9 +269,9 @@ const CheckoutPage = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
-        <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mb-4"></div>
+      <div >
+        <div className="loading-state">
+          <div className="loading-spinner"></div>
           <p>Processing your payment...</p>
         </div>
       </div>
@@ -285,21 +279,21 @@ const CheckoutPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl font-bold text-center mb-8">Complete Your Order</h1>
+    <div className="checkout-container">
+      <div className="checkout-header">
+        <h1 >Complete Your Order</h1>
         
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
-          <div className="flex justify-between mb-2">
+        <div className="order-summary" >
+          <h2>Order Summary</h2>
+          <div >
             <span>Order ID:</span>
             <span>{orderDetails.orderId}</span>
           </div>
-          <div className="flex justify-between mb-2">
+          <div >
             <span>Total:</span>
             <span>${orderDetails.totalPrice.toFixed(2)} {orderDetails.currency.toUpperCase()}</span>
           </div>
-          <hr className="my-4" />
+          <hr/>
           
           {!clientSecret ? (
             <Elements stripe={stripePromise} options={cardOptions}>

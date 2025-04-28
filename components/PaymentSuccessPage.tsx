@@ -67,9 +67,9 @@ const PaymentSuccessPage = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mb-4"></div>
+      <div>
+        <div className="loading-state">
+          <div className="loading-spinner"></div>
           <p>Verifying your payment...</p>
         </div>
       </div>
@@ -78,21 +78,21 @@ const PaymentSuccessPage = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
-          <div className="text-center">
-            <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-100">
-              <svg className="h-10 w-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <div>
+        <div >
+          <div className="error-state">
+            <div className="error-icon">
+              <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
             </div>
             
-            <h2 className="mt-4 text-2xl font-bold text-gray-900">Payment Verification Failed</h2>
-            <p className="mt-2 text-gray-600">{error}</p>
+            <h2 className="error-title">Payment Verification Failed</h2>
+            <p className="error-message">{error}</p>
             
-            <div className="mt-6">
-              <Link href="/">
-                <span className="inline-block w-full bg-blue-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-white font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            <div>
+              <Link href="/" className="home-link">
+                <span>
                   Return to Home
                 </span>
               </Link>
@@ -104,51 +104,51 @@ const PaymentSuccessPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
-        <div className="text-center">
-          <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100">
-            <svg className="h-10 w-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <div >
+      <div>
+        <div className="success-container">
+          <div className="success-icon">
+            <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
           
-          <h2 className="mt-4 text-2xl font-bold text-gray-900">Payment Successful!</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="success-title">Payment Successful!</h2>
+          <p className="success-message">
             Thank you for your payment. Your transaction was successful.
           </p>
           
-          <div className="mt-6 text-left bg-gray-50 p-4 rounded-md">
-            <h3 className="font-medium text-gray-900 mb-2">Payment Details:</h3>
+          <div className="payment-details" >
+            <h3 >Payment Details:</h3>
             
             {paymentDetails.paymentId && (
-              <div className="text-sm mb-1">
-                <span className="font-medium">Payment ID:</span> {paymentDetails.paymentId}
+              <div className="detail-row">
+                <span>Payment ID:</span> {paymentDetails.paymentId}
               </div>
             )}
             
             {paymentDetails.orderId && (
-              <div className="text-sm mb-1">
-                <span className="font-medium">Order ID:</span> {paymentDetails.orderId}
+              <div className="detail-row">
+                <span >Order ID:</span> {paymentDetails.orderId}
               </div>
             )}
             
             {paymentDetails.status && (
-              <div className="text-sm mb-1">
-                <span className="font-medium">Status:</span> {paymentDetails.status}
+              <div className="detail-row">
+                <span >Status:</span> {paymentDetails.status}
               </div>
             )}
             
             {paymentDetails.amount && paymentDetails.currency && (
-              <div className="text-sm mb-1">
-                <span className="font-medium">Amount:</span> {paymentDetails.amount.toFixed(2)} {paymentDetails.currency.toUpperCase()}
+              <div className="detail-row" >
+                <span >Amount:</span> {paymentDetails.amount.toFixed(2)} {paymentDetails.currency.toUpperCase()}
               </div>
             )}
           </div>
           
-          <div className="mt-6">
-            <Link href="/">
-              <span className="inline-block w-full bg-blue-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-white font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+          <div >
+            <Link href="/" className="home-link">
+              <span >
                 Return to Home
               </span>
             </Link>

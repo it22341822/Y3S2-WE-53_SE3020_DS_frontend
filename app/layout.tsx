@@ -15,14 +15,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className="bg-blue-600 text-white p-4">
-          <div className="container mx-auto">
-            <h1 className="text-xl font-bold">BYTEats Payment System</h1>
+        <header >
+          <div >
+            <h1 >BYTEats Payment System</h1>
           </div>
         </header>
-        <main className="container mx-auto py-8 px-4">{children}</main>
-        <footer className="bg-gray-100 p-4 mt-8">
-          <div className="container mx-auto text-center text-gray-600">
+        <main >{children}</main>
+        <footer>
+          <div >
             <p>&copy; {new Date().getFullYear()} BYTEats. All rights reserved.</p>
           </div>
         </footer>
