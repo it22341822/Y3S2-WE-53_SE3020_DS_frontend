@@ -1,0 +1,83 @@
+/* [project]/src/pages/Home.css [client] (css) */
+.home-container {
+  color: #f1f5f9;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.home-title {
+  background: linear-gradient(to right, #f59e0b, #ef4444);
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px #0003;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-bottom: 12px;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.home-subtitle {
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.home-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.loading-spinner {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  display: flex;
+}
+
+.spinner {
+  border: 5px solid #f59e0b4d;
+  border-top-color: #f59e0b;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  animation: 1s ease-in-out infinite spin;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (width <= 768px) {
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-subtitle {
+    font-size: 1rem;
+  }
+
+  .home-container {
+    padding: 30px 15px;
+  }
+}
+
+@media (width <= 480px) {
+  .home-title {
+    font-size: 1.8rem;
+  }
+}
+
+/*# sourceMappingURL=src_pages_Home_css_2bef753f._.single.css.map*/

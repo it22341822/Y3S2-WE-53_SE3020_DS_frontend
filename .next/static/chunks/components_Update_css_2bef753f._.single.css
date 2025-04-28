@@ -1,0 +1,107 @@
+/* [project]/components/Update.css [client] (css) */
+.update-review-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.review-form {
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+}
+
+.form-group {
+  flex-direction: column;
+  gap: 8px;
+  display: flex;
+}
+
+.form-group label {
+  color: #333;
+  font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.rating-selector {
+  gap: 8px;
+  display: flex;
+}
+
+.star-input {
+  cursor: pointer;
+  color: #ccc;
+  font-size: 24px;
+  transition: color .2s;
+}
+
+.star-input.selected, .star-input:hover {
+  color: gold;
+}
+
+.form-actions {
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.cancel-button {
+  color: #333;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px 15px;
+  transition: background-color .2s;
+}
+
+.cancel-button:hover {
+  background-color: #e5e5e5;
+}
+
+.submit-button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  transition: background-color .2s;
+}
+
+.submit-button:hover {
+  background-color: #3a80d2;
+}
+
+.submit-button:disabled {
+  cursor: not-allowed;
+  background-color: #a8c6ef;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=components_Update_css_2bef753f._.single.css.map*/

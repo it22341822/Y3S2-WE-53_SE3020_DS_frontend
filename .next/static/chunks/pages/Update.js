@@ -1,0 +1,10 @@
+__turbopack_load_page_chunks__("/Update", [
+  "static/chunks/node_modules_next_dist_8a201671._.js",
+  "static/chunks/node_modules_react-dom_82bb97c6._.js",
+  "static/chunks/node_modules_axios_lib_9aa2336a._.js",
+  "static/chunks/node_modules_2a5cf4bb._.js",
+  "static/chunks/[root-of-the-server]__33ab154e._.js",
+  "static/chunks/_35d79bf9._.css",
+  "static/chunks/pages_index_5771e187._.js",
+  "static/chunks/pages_index_1f4f65ed._.js"
+])

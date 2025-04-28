@@ -1,0 +1,20 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/reviews/add": [
+      "static/chunks/node_modules_next_dist_8a201671._.js",
+      "static/chunks/node_modules_react-dom_82bb97c6._.js",
+      "static/chunks/node_modules_axios_lib_9aa2336a._.js",
+      "static/chunks/node_modules_2a5cf4bb._.js",
+      "static/chunks/[root-of-the-server]__33ab154e._.js",
+      "static/chunks/components_54e8f0da._.css",
+      "static/chunks/pages_index_5771e187._.js",
+      "static/chunks/pages_index_a4b5b7d0._.js"
+    ]
+  },
+  "ampFirstPages": []
+}
